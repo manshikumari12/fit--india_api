@@ -2,6 +2,7 @@ const express = require("express")
 const {UserModel}=require("../model/user.model")
 const jwt = require("jsonwebtoken")
 const {auth}=require("../auth/auth")
+require("dotenv").config()
 const {blackmodel}=require("../model/black.model")
 const bcrypt = require("bcrypt")
 const Userroute = express.Router()
@@ -46,7 +47,8 @@ Userroute.post("/login", async(req,res)=>{
         if(user.length>0){
             bcrypt.compare(password,user[0].password,(err,result)=>{
                 if(result){
-                    const token =jwt.sign({userid:user[0]._id},process.env.jwtkey)
+                    const token =jwt.sign({userid:user[0]._id},"fitindia")
+                    
                     res.send({ msg: " user has been Logged in ", token: token });
                 }
             })
@@ -74,9 +76,7 @@ Userroute.get("/logout",auth,async(req,res)=>{
         }
     }else{
         res.send("login needed")
-    }
-  
-    
+    } 
     
     })
 
