@@ -48,7 +48,7 @@ Userroute.post("/login", async(req,res)=>{
             bcrypt.compare(password,user[0].password,(err,result)=>{
                 if(result){
                     const token =jwt.sign({userid:user[0]._id},"fitindia")
-                    
+
                     res.send({ msg: " user has been Logged in ", token: token });
                 }
             })
@@ -62,21 +62,25 @@ Userroute.post("/login", async(req,res)=>{
 })
 
 
-Userroute.get("/logout",auth,async(req,res)=>{
+
+// Userroute.get("/refreshtoken "(req,res)=>{
+//     try {
+//         const refresh=req.
+        
+//     } catch (error) {
+//         return res.status(400).send({msg:error.message}) 
+//     }
+// })
+
+
+
+
+Userroute.get("/logout",async(req,res)=>{
 
     let token = req.headers.authorization?.split(" ")[1]
-    if(token){
-        try {
-            let logout =new blackmodel({token})
-            await logout.save()
-            res.send("logout done")
-            
-        } catch (error) {
-            res.send("wrong")
-        }
-    }else{
-        res.send("login needed")
-    } 
+let black =new blackmodel({token})
+await black.save()
+res.send({msg:"logout done"})
     
     })
 

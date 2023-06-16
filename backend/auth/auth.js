@@ -8,7 +8,8 @@ const auth =async(req,res,next)=>{
     console.log(token)
     if(token){
         const black= await blackmodel.find({token})
-        console.log(black)
+
+ 
         if(black.length>0){
             res.send({msg:"please login again"})
         }else{
