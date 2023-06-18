@@ -4,8 +4,8 @@ require("dotenv").config()
 const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 
 passport.use(new GoogleStrategy({
-    clientID:"327928589362-mct8uq6f8s93kpo54d07othp7gncne58.apps.googleusercontent.com",
-    clientSecret:"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",
+    clientID:"327928589362-vvd79470030mnsoji5dsliclcb7fe3aa.apps.googleusercontent.com",
+    clientSecret:"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",
     callbackURL: "http://localhost:1111/auth/google/callback",
     passReqToCallback   : true
   },
@@ -13,10 +13,10 @@ passport.use(new GoogleStrategy({
 //   done(null,profile)
 
 
-// await UserModel.insertMany([{ name: profile._json.name, email: profile._json.email, password: "123" }]);
+await UserModel.insertMany([{ name: profile._json.name, email: profile._json.email, password: "123" }]);
 
-// return cb(null, "user");
-console.log(profile)
+return cb(null, "user");
+// console.log(profile)
 }
 
 
