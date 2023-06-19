@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="shortcut icon" href="../images/logo.jpeg" type="image/x-icon" />
+    <script
+      type="module" 
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav>
+            <h1 id="logo">
+              <img
+                src="../images/navLogo.png"
+                alt=""
+                onclick="window.location.href='../index.html'"
+              />
+            </h1>
+            <h1 id="tags">
+              <a href="../index.html">HOME</a>
+              <a href="">ABOUT</a>
+              <a href="">GYMS</a><a href="">TRAINERS</a><a href="./class.html">CLASSES</a>
+            </h1>
+            <h1 id="info">
+              <p id="location">
+                <ion-icon name="location-outline"></ion-icon><span>INDIA</span>
+              </p>
+              <p id="notifications">
+                <ion-icon name="notifications-outline"></ion-icon><span>0</span>
+              </p>
+              <p id="user">
+                <ion-icon name="person-outline"></ion-icon><span>Login</span>
+              </p>
+            </h1>
+          </nav>
+
+        
+        <div class="row text-center">
+      
+    
+    <div id="login-box">
+        <div class="left">
+            <h1>Log in</h1>
+    
+            <form action="">
+              <input type="text" name="email" placeholder="Email" id="email"/>
+         
+            <input type="password" name="password" placeholder="Type password" id="password"/>
+            
+            <input type="checkbox" id="remember" name="remember"><span style="color:#b6b6b6;font-size: 0.9em; font-size: 11px;"> Remember Me</span><a href="#" style="font-size: 10px; text-decoration: none;color: black;";>Forgot your password?</a> 
+    
+            <input type="submit" name="signup_submit" value="login" />
+            </form>
+
+<br>
+
+
+            
+        
+           <a href="http://localhost:1111/auth/google"><button class="social-signin google">Sign up with Google+</button></a> 
+
+            <a href="./signup.html" style="float:right;margin-right:35px;font-size: 0.9em;font-size: 10px; text-decoration: none;color: black;";>Don't have an account? Sign up!</a>
+      
+        </div>
+    
+        <div class="right">
+          
+          
+          
+        
+        </div>
+        
+       
+    </div>
+   
+    </div>
+    
+</body>
+</html>
+<script src="../scripts/login.js"></script>

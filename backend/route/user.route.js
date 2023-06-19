@@ -138,4 +138,29 @@ Userroute.post('/forget/pass',async(req,res)=>{
     }
 })
 
+
+// Userroute.post('/new/password', async(req,res)=>{
+//     const newPassword = req.body.password;
+//     const sendToken =req.body.token;
+//    UserModel.findOne({resetToken: sendToken, expireToken: {$gt: Date.now()}}).then(user =>{
+//         if (!user){
+//             return res.status(400).json({msg: [{msg: 'try again expire'}]});
+//         }
+//         bcrypt.hash(newPassword, 6).then(hashedpassword =>{
+//          user.password=hashedpassword,
+//          console.log(hashedpassword)
+//             user.resetToken=undefined,
+//             user.expireToken=undefined,
+//             user.save().then((saveUser)=>{
+//                 res.json({msg:[{msg:"password change"}]})
+//             })
+
+//         })
+//     })
+// })
+
+
+
+
+
 module.exports={Userroute}
